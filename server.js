@@ -40,10 +40,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.listen(5000, function(err) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log("Server is Connected");
-  }
-});
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => console.log(`Server running on port ${port}`));
